@@ -1,0 +1,482 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tampilan;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
+import java.awt.Image;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.sql.*;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JToolBar;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
+import koneksi.koneksi;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+/**
+ *
+ * @author sahruli nur rizki
+ */
+public class FormPPMataPelajaran extends javax.swing.JPanel {
+private Connection conn = new koneksi().connect();
+private DefaultTableModel tabmode;
+
+    /**
+     * Creates new form FormPPMataPelajaran
+     */
+    public FormPPMataPelajaran() {
+        initComponents();
+         datatable();
+         tampil_combo();
+         tampil_combokelas();
+         nama_mapel();
+    }
+
+     protected void aktif() {
+        mapel.setEnabled(true); 
+        hari.setEnabled(true);
+        kombo.getSelectedItem();
+        ckelas.getSelectedItem();
+        mapel.requestFocus();
+    }
+protected void kosong() {
+        mapel.setSelectedItem("");
+        hari.setSelectedItem("");
+        kombo.setSelectedItem("");
+        ckelas.setSelectedItem("");
+        tmapel.selectAll();
+    }
+protected void datatable () {
+        
+        Object[] Baris = {"NAMA MAPEL","NAMA GURU","KELAS","HARI"};
+        tabmode = new DefaultTableModel(null, Baris);
+        tmapel.setModel(tabmode);
+        String sql = "select * from t_jadwal_mapel";
+        
+        try {
+                java.sql.Statement stat = conn.createStatement();
+                ResultSet hasil = stat.executeQuery(sql);
+                while (hasil.next()){
+                    String a = hasil.getString("nama_mapel");
+                    String b = hasil.getString("nama_guru");
+                    String c = hasil.getString("kelas");
+                    String d = hasil.getString("hari");
+                    
+                  
+                    
+                    String[] data={a,b,c,d};
+                    tabmode.addRow(data);
+                }
+            } catch (Exception e) {
+        }
+    }
+public void nama_mapel(){
+     try{
+        
+       String sql= "select * From t_mapel ";
+        java.sql.Statement stat = conn.createStatement();
+        java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+        
+        while(rs.next()){
+            mapel.addItem(rs.getString("mata_pelajaran"));      
+        }
+        rs.last();
+        int jumlahdata = rs.getRow();
+        rs.first();
+        
+    }catch(Exception e){
+        
+    }
+    
+}
+public void tampil_combo(){
+    
+   
+   
+    try{
+        
+       String sql= "select * From t_guru ";
+        java.sql.Statement stat = conn.createStatement();
+        java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+        
+        while(rs.next()){
+            kombo.addItem(rs.getString("nama_guru"));
+            
+        }
+        rs.last();
+        int jumlahdata = rs.getRow();
+        rs.first();
+        
+    }catch(Exception e){
+        
+    }
+}
+
+public void tampil_combokelas(){
+    
+   
+   
+    try{
+        
+       String sql= "select * From t_kelas ";
+        java.sql.Statement stat = conn.createStatement();
+        java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+        
+        while(rs.next()){
+            ckelas.addItem(rs.getString("kelas"));
+            
+        }
+        rs.last();
+        int jumlahdata = rs.getRow();
+        rs.first();
+        
+    }catch(Exception e){
+        
+    }
+}
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel4 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        kombo = new javax.swing.JComboBox();
+        ckelas = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        input = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        bhapus = new javax.swing.JButton();
+        mapel = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        hari = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tmapel = new javax.swing.JTable();
+
+        setBackground(new java.awt.Color(102, 102, 102));
+        setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        setLayout(new java.awt.BorderLayout());
+
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel4.setPreferredSize(new java.awt.Dimension(984, 547));
+
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText(" INPUT MATA PELAJARAN");
+        jLabel1.setToolTipText("");
+        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 420, 34));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("MATA PELAJARAN");
+        jLabel5.setMinimumSize(new java.awt.Dimension(25, 25));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 96, 133, 25));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("NAMA GURU");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel7.setMinimumSize(new java.awt.Dimension(25, 25));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 133, 25));
+
+        kombo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        kombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cari Guru" }));
+        kombo.setMinimumSize(new java.awt.Dimension(25, 25));
+        kombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                komboActionPerformed(evt);
+            }
+        });
+        jPanel3.add(kombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 170, 25));
+
+        ckelas.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        ckelas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cari Kelas" }));
+        ckelas.setMinimumSize(new java.awt.Dimension(25, 25));
+        ckelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckelasActionPerformed(evt);
+            }
+        });
+        jPanel3.add(ckelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 80, 25));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("NAMA KELAS");
+        jLabel11.setMinimumSize(new java.awt.Dimension(25, 25));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 133, 25));
+
+        input.setBackground(new java.awt.Color(102, 102, 102));
+        input.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        input.setForeground(new java.awt.Color(255, 255, 255));
+        input.setText("INPUT");
+        input.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        input.setMinimumSize(new java.awt.Dimension(25, 25));
+        input.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputActionPerformed(evt);
+            }
+        });
+        jPanel3.add(input, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 109, 25));
+
+        jButton2.setBackground(new java.awt.Color(102, 102, 102));
+        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("UBAH");
+        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jButton2.setMinimumSize(new java.awt.Dimension(25, 25));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 109, 25));
+
+        bhapus.setBackground(new java.awt.Color(102, 102, 102));
+        bhapus.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        bhapus.setForeground(new java.awt.Color(255, 255, 255));
+        bhapus.setText("HAPUS");
+        bhapus.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        bhapus.setMinimumSize(new java.awt.Dimension(25, 25));
+        bhapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bhapusActionPerformed(evt);
+            }
+        });
+        jPanel3.add(bhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 109, 25));
+
+        mapel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        mapel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mata Pelajaran" }));
+        jPanel3.add(mapel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 170, 25));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("HARI");
+        jLabel3.setMinimumSize(new java.awt.Dimension(25, 25));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 133, 25));
+
+        hari.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        hari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hari", "Senin", "Selasa", "Rabu", "Kamis", "Jumat" }));
+        jPanel3.add(hari, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 80, 25));
+
+        tmapel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        tmapel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tmapel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tmapelMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tmapel);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+
+        add(jPanel4, java.awt.BorderLayout.CENTER);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void bhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bhapusActionPerformed
+        // TODO add your handling code here:
+        int ok = JOptionPane.showConfirmDialog(null, "Hapus","Konfirmasi Dialog",JOptionPane.YES_NO_CANCEL_OPTION);
+        if (ok==0) {
+            String sql = "delete from t_jadwal_mapel where nama_mapel = '"+mapel.getSelectedItem()+"'";
+            try {
+                PreparedStatement stat = conn.prepareStatement(sql);
+                stat.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Data Berhasil Di Hapus");
+                kosong();
+                nama_mapel();
+                mapel.requestFocus();
+                datatable();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,"Data Gagal Di Hapus"+e);
+            }
+        }
+    }//GEN-LAST:event_bhapusActionPerformed
+
+    private void inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputActionPerformed
+        String sql = "insert into t_jadwal_mapel values (?,?,?,?)";
+        try {
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1,mapel.getSelectedItem().toString());
+            stat.setString(2,kombo.getSelectedItem().toString());
+            stat.setString(3,ckelas.getSelectedItem().toString());
+            stat.setString(4,hari.getSelectedItem().toString());
+            
+            
+           
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
+            kosong();
+            mapel.requestFocus();
+            nama_mapel();
+            datatable();
+            tampil_combo();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Data Gagal Disimpan"+e);
+        }
+    }//GEN-LAST:event_inputActionPerformed
+
+    private void komboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_komboActionPerformed
+        // TODO add your handling code here:
+
+        String item = (String)kombo.getSelectedItem();
+        String sql= "select * From data_guru where nama_guru = ? ";
+        try{
+
+            java.sql.Statement stat = conn.createStatement();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, item);
+            ResultSet rs = pst.executeQuery();
+
+        }catch(Exception e){
+
+        }
+    }//GEN-LAST:event_komboActionPerformed
+
+    private void ckelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckelasActionPerformed
+        // TODO add your handling code here:
+         String item = (String)ckelas.getSelectedItem();
+        String sql= "select * From kelas where kelas = ? ";
+        try{
+
+            java.sql.Statement stat = conn.createStatement();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, item);
+            ResultSet rs = pst.executeQuery();
+
+
+        }catch(Exception e){
+
+        }
+    }//GEN-LAST:event_ckelasActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try {
+             
+            String sql = "update t_jadwal_mapel set  nama_mapel =?,hari=?,nama_guru=?,kelas=? where nama_mapel='"+mapel.getSelectedItem()+"'";
+           
+
+            PreparedStatement stat = conn.prepareStatement(sql);           
+            stat.setString(1,mapel.getSelectedItem().toString());
+            stat.setString(2,hari.getSelectedItem().toString());        
+            stat.setString(3,kombo.getSelectedItem().toString());         
+            stat.setString(4,ckelas.getSelectedItem().toString());
+            
+            
+            
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
+            kosong();
+            mapel.requestFocus();
+            nama_mapel();
+            datatable();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Data Gagal Disimpan"+e);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tmapelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tmapelMouseClicked
+        // TODO add your handling code here:
+        int bar = tmapel.getSelectedRow();
+        String a = tabmode.getValueAt(bar,0).toString();
+        String b = tabmode.getValueAt(bar,1).toString();
+        String c = tabmode.getValueAt(bar,2).toString();
+        String d = tabmode.getValueAt(bar,3).toString();
+        
+     mapel.setSelectedItem(a);
+     kombo.setSelectedItem(b);
+     ckelas.setSelectedItem(c);
+     hari.setSelectedItem(d);
+     
+
+    }//GEN-LAST:event_tmapelMouseClicked
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bhapus;
+    private javax.swing.JComboBox ckelas;
+    private javax.swing.JComboBox<String> hari;
+    private javax.swing.JButton input;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox kombo;
+    private javax.swing.JComboBox<String> mapel;
+    private javax.swing.JTable tmapel;
+    // End of variables declaration//GEN-END:variables
+}

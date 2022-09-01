@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="390" pageHeight="240" orientation="Landscape" columnWidth="350" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f8a05f60-fc06-42fe-a66a-4675f43dd50e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="NIS" class="java.lang.String"/>
+	<parameter name="nama_siswa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from t_siswa where NIS = $P{NIS} or nama_siswa = $P{nama_siswa}]]>
+	</queryString>
+	<field name="id_siswa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NIS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_kelas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="195" splitType="Stretch">
+			<staticText>
+				<reportElement x="86" y="66" width="180" height="20" uuid="6e262f55-39ef-4997-b380-f2739b1347c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[IDENTITAS SISWA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="121" width="185" height="20" uuid="2060b2f3-8562-414c-a93a-2887cd48fc13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NIS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="101" width="185" height="20" uuid="64bc8f4c-52d8-4762-bb8f-930b94ca22f7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="141" width="185" height="20" uuid="bc82e073-9e54-4bdc-8a38-971684d4abbd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jk}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="101" width="100" height="20" uuid="1aa9ceff-c956-4f44-b231-b9a5fe6e5019"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Lengkap]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="121" width="100" height="20" uuid="ba5d996f-a15f-4fe1-8cb2-0d0ed3d70cd4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="141" width="100" height="20" uuid="5edb8b0b-057c-4c08-b416-d6676a8a81b1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="101" width="19" height="20" uuid="ddeb6b7d-d354-400f-8b95-7a8f2f5a24a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="121" width="19" height="20" uuid="8d5ae6f6-29bc-403c-a2ed-48d5bf6dc99f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="141" width="19" height="20" uuid="464ce807-006d-4233-90c0-eea25a738a4c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="171" width="348" height="20" uuid="175f19bf-686d-4452-b95f-fe1e8274d2cc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[MASA BERLAKU : SELAMA MENJADI SISWA SMK YAPPA DEPOK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="0" width="180" height="20" uuid="b537fd84-ab50-4a73-a58a-59e5be0272d6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[SMK YAPPA DEPOK]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="44" height="60" uuid="7db49aff-5c8f-425d-b41c-5c3e861d607d"/>
+				<imageExpression><![CDATA["D:\\Backup\\sistemAkademik\\src\\gambar\\Logo SMK Jaket1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="59" y="20" width="247" height="20" uuid="aa445f66-874e-4451-8607-8ec2293be15b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Gg. Majelis No.79, Abdijaya, Kec. Sukmajaya]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="40" width="127" height="20" uuid="843304b7-f7e5-42b8-9e87-69eedc1d1d5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ Kota Depok Jawa Barat 16417]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="65" width="350" height="1" uuid="d3192ba9-8edf-4283-91ca-3bd5f3728021"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

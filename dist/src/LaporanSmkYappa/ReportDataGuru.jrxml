@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="172ec47b-71b0-4c1a-a8e6-683af3bcb579">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from t_guru]]>
+	</queryString>
+	<field name="nama_guru" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_telp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="107" y="46" width="325" height="20" uuid="60696882-1706-464c-afdd-c2069b1e9ba0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Gg. Majelis No.79, Abdijaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16417]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="26" width="347" height="20" uuid="78895025-b1a2-4d27-917c-228d8ca6c565"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[MEWUJUDKAN GENERASI TAQWA, CERDAS, TERAMPIL DAN MANDIRI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="6" width="249" height="20" uuid="ec53229f-6bf4-4faa-9cef-57d7c1d9811f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[SEKOLAH MENENGAH KEJURUAN YAPPA DEPOK]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="79" width="554" height="1" uuid="ea557f18-1fea-46f4-a7d6-ac5ab138f380"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="208" y="0" width="145" height="20" uuid="b8e19f54-a969-460d-89d7-6c77cee25bdf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[DATA GURU SMK YAPPA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="185" height="20" uuid="6b9e1bbe-696a-4d0c-b5c5-4273e658c301"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="186" y="0" width="107" height="20" uuid="2972be19-9fdd-48f7-9f5b-4c967f4ac51b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="293" y="0" width="90" height="20" uuid="c08802d0-18c1-4a5f-b6e1-b73512a39b63"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="383" y="0" width="172" height="20" uuid="e51856ce-6cb7-4383-96a1-59af6026218c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="383" y="0" width="172" height="20" uuid="fcded01d-1e6a-42ae-9f1f-001aef53ef5f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="0" width="90" height="20" uuid="582a1f23-2365-4306-8d7f-6c6b96fb20a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS KELAMIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="0" width="107" height="20" uuid="1cc34198-430c-4bd1-b87b-5d0c529db2ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO TELPON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="187" height="20" uuid="fa4eb4b5-10bc-4e75-9d55-aa14124a6644"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA GURU]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="185" height="20" uuid="cfb117cd-bceb-4c0f-ae21-9f243fe95e05"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="186" y="0" width="107" height="20" uuid="14cbcc2a-b693-4ffd-aa52-6ed44363678f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="293" y="0" width="90" height="20" uuid="73776792-2a13-4079-8508-12eeebdad67a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="383" y="0" width="172" height="20" uuid="fab2b30e-ea49-4211-9013-e5a45ddca701"/>
+			</rectangle>
+			<textField>
+				<reportElement x="383" y="0" width="172" height="20" uuid="0c317078-4c15-4788-a1df-98da7e3c802d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="0" width="90" height="20" uuid="9a665802-dc6b-4ca3-8080-7e26c781324b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="0" width="107" height="20" uuid="09f4f990-466a-4669-b195-1b2e25c6f83f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_telp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="0" width="187" height="20" uuid="796ba06e-3b49-46c2-807d-281fd658d90a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_guru}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="41" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

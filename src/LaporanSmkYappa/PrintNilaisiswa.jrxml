@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f95301b5-19a2-4c99-b1aa-f1cf425a8823">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nis" class="java.lang.String"/>
+	<parameter name="nama_siswa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from t_nilai_siswa where  nis = $P{nis} or nama_siswa = $P{nama_siswa}]]>
+	</queryString>
+	<field name="id_nilai_siswa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nis" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_mapel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_guru" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nilai_tugas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nilai_uts" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nilai_uas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hasil" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="105" y="40" width="325" height="20" uuid="a2d047fe-01a5-43fc-8ba2-39ea98a334e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Gg. Majelis No.79, Abdijaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16417]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="249" height="20" uuid="44b35cc4-7450-4798-b8a5-408dd25454f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[SEKOLAH MENENGAH KEJURUAN YAPPA DEPOK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="94" y="20" width="347" height="20" uuid="4bffa309-76fe-4485-9f8e-8343a6c98aa1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[MEWUJUDKAN GENERASI TAQWA, CERDAS, TERAMPIL DAN MANDIRI]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="79" width="555" height="1" uuid="000f7615-3bfb-49af-ac9e-76f895a2c7e7"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="129" splitType="Stretch">
+			<textField>
+				<reportElement x="95" y="64" width="132" height="20" uuid="63c0cbf4-72e8-49ea-b9cb-d23982ffc0d1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="84" width="61" height="20" uuid="10c2ee21-eb61-485d-8635-003bd82a458b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[NIS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="95" y="84" width="132" height="20" uuid="0e0d8b15-2aa8-48ff-bb61-955768562da3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="104" width="61" height="20" uuid="f770d0b9-11d1-4190-b014-42cedd0d3970"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[KELAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="95" y="104" width="61" height="20" uuid="cca1fbd6-7179-4af0-a1a0-0d4fd2a500f3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_kelas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="64" y="104" width="31" height="20" uuid="0cefeeca-4f35-41bb-b679-ba25cc448684"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="64" width="31" height="20" uuid="51e1ce6b-b958-444e-bbcd-0c0a8685f11f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="84" width="31" height="20" uuid="31ac09b5-3a34-46f3-82dc-a67067aaa8c0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="0" width="170" height="20" uuid="207a8290-7407-45b5-bec3-561d9d765463"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN HASIL BELAJAR SISWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="64" width="61" height="20" uuid="b370c9a5-3f07-470c-a62c-c9e02099be28"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="484" y="0" width="79" height="20" uuid="b14b4525-f30d-498d-b447-ba041fc16905"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="405" y="0" width="79" height="20" uuid="ea07706c-b30e-407a-8298-5ce44d6badd4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="326" y="0" width="79" height="20" uuid="f32f294b-4178-41f0-850d-bfc8d87a15b4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="0" width="79" height="20" uuid="9453bbd6-1f5e-4ef1-a475-76ee9e68ed3d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="168" y="0" width="79" height="20" uuid="198e78a7-36c6-43df-b812-829f3677add7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="168" height="20" uuid="03ce7bc1-a814-4717-b146-ba09a4ec819f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="168" height="20" uuid="62087810-e638-4adb-a742-48839e149acc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[MATA PELAJARAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="0" width="79" height="20" uuid="6d2d7bd9-0f75-42a5-ad78-1c58e2a15593"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[NILAI TUGAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="247" y="0" width="79" height="20" uuid="b1139577-d418-4339-923f-1e883690f603"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[NILAI UAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="0" width="79" height="20" uuid="d8d03b4d-ce2d-42c1-a7bf-82717fdcb4dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[NILAI UTS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="0" width="79" height="20" uuid="2f7f2cc3-af1f-444c-b3ce-1f9f0c4a5008"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[PREDIKAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="0" width="79" height="20" uuid="62cdb26b-181b-45b9-bb89-a35faad351f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[HASIL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="168" height="20" uuid="c2ee0d17-8178-4700-9bcf-e06d8337042b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="168" y="0" width="79" height="20" uuid="2c48c46f-73ab-4b08-9ca2-93a4bc80b00f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="0" width="79" height="20" uuid="c34d609e-1f3d-47a4-923b-219b8aca6d35"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="326" y="0" width="79" height="20" uuid="ebf2034b-bfda-42fd-83fe-2a9385cbf805"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="405" y="0" width="79" height="20" uuid="2054dffb-a661-411e-9190-686c376940cd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="484" y="0" width="79" height="20" uuid="341c9201-7b1f-414a-a8b1-c1475e91ee8e"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="168" height="20" uuid="8c9c8e19-123c-445e-b6e8-fcfe0286f27b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_mapel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="0" width="79" height="20" uuid="10df6c9c-d590-45a7-9f68-fea53649a751"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nilai_tugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="326" y="0" width="79" height="20" uuid="c23b9de6-cbd6-4a30-aa8f-72c08e288d55"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nilai_uts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="0" width="79" height="20" uuid="dd13458c-16ae-47b2-9097-b6f47b921794"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nilai_uas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="0" width="79" height="20" uuid="07b5bd6c-e299-45c1-8f06-8dcda4e3fdba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="0" width="79" height="20" uuid="07cf3a9d-71d6-4db9-8eb7-d76d9ce24f1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasil}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="87" splitType="Stretch">
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="463" y="0" width="100" height="20" uuid="f8bcefb3-4c88-429c-bec8-28742fa66fa7"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="423" y="0" width="61" height="20" uuid="68e9a079-2db7-4ae7-b8c4-71992b7534bb"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Depok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="67" width="166" height="20" uuid="98c18f4d-7003-4b08-9f5c-35fccc26bfd6"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Laits Assamarqandi Mufa, S.Si., M.Pd.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d7ebca1d-6aa1-491e-bcd0-52710780ba0d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from t_kelas]]>
+	</queryString>
+	<field name="kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="wali_kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="47" width="325" height="20" uuid="f56f583e-61cb-4d9d-945f-f2511ab5e70d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Gg. Majelis No.79, Abdijaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16417]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="27" width="347" height="20" uuid="86104718-a9d4-4629-8580-7efb76ed7828"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[MEWUJUDKAN GENERASI TAQWA, CERDAS, TERAMPIL DAN MANDIRI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="7" width="249" height="20" uuid="d6b36c46-c6ea-43f0-a72e-b1a96c5c540b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[SEKOLAH MENENGAH KEJURUAN YAPPA DEPOK]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="78" width="554" height="1" uuid="f5661458-43ef-47f3-8c21-939d366ee5e7"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="208" y="0" width="145" height="20" uuid="803dd56e-0912-4a13-802f-457514152f2b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Data Kelas Smk Yappa]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="381" y="0" width="138" height="20" uuid="fd66d00f-68ed-4a38-b315-ae59a8c1ef13"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="0" width="220" height="20" uuid="1c3832b5-a34f-4f70-ab40-07e77511a5b0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="43" y="0" width="118" height="20" uuid="47cbe9cd-2d31-4e62-a0f2-0499da6c335c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="43" y="0" width="118" height="20" uuid="4e14d4e9-9cf4-4322-92d1-0d14db37140a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="0" width="220" height="20" uuid="9fa5d35d-329b-426a-9fa9-40359f288208"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Wali Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="0" width="138" height="20" uuid="cad44e59-97bb-4024-92dd-a113bbec7276"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ketua Kelas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="381" y="0" width="138" height="20" uuid="f7ba4565-9b1e-410b-bd46-c23773d533d8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="0" width="220" height="20" uuid="51db32e4-27d7-4748-969b-63e09da43fca"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="43" y="0" width="118" height="20" uuid="2f4611c5-e744-4157-be7e-4f02084b7a7f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="43" y="0" width="118" height="20" uuid="a575709b-3bc0-47c1-9ed3-2b23e581dd85"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="0" width="220" height="20" uuid="3be23f17-4fa7-49bb-b8e7-d2ce9c6362ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{wali_kelas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
